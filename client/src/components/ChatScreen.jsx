@@ -6,7 +6,7 @@ export default function ChatScreen({handleMessage, sendValue, tab,setTab, sendPr
     return(
         <div className="flex flex-col h-full">
             <div className="bg-blue-400 flex justify-center items-center text-3xl font-ubuntu w-full h-[100px] text-white">
-            Chat Here
+             Chat Here
             </div>
 
             <div className="flex h-full">
