@@ -3,7 +3,9 @@ import ChatRoom from './components/ChatRoom'
 
 const App = () => {
   return (
+    <div className='h-screen'>
     <ChatRoom />
+    </div>
   )
 }
 
