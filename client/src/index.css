@@ -2,4 +2,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inconsolata&family=Jost&family=Roboto:wght@500;900&family=Ubuntu&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fjalla+One&family=Inconsolata&family=Jost&family=Roboto:wght@500;900&family=Ubuntu&display=swap');

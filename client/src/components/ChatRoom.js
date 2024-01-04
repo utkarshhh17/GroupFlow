@@ -20,7 +20,7 @@ const ChatRoom = () => {
     }, [userData]);
 
     const connect =()=>{
-        let Sock = new SockJS('http://localhost:8080/ws');
+        let Sock = new SockJS('http://13.201.26.172:8080/ws');
         stompClient = over(Sock);
         stompClient.connect({},onConnected, onError);
     }
@@ -120,7 +120,7 @@ const ChatRoom = () => {
         connect();
     }
     return (
-    <div className='flex flex-col h-full'>
+    <div className='flex flex-col h-screen'>
         {userData.connected?
         <ChatScreen handleMessage={handleMessage} sendValue={sendValue} tab={tab} setTab={setTab} sendPrivateValue={sendPrivateValue} 
         privateChats={privateChats} userData={userData} publicChats={publicChats}

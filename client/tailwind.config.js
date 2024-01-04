@@ -6,7 +6,8 @@ module.exports = {
       fontFamily:{
         'jost':['Jost'],
         'roboto':['Roboto'],
-        'ubuntu':['Ubuntu']
+        'ubuntu':['Ubuntu'],
+        'dancing':['Dancing Script']
       },
     },
   },
