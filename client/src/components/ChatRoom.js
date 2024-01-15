@@ -40,6 +40,8 @@ const ChatRoom = () => {
           stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
     }
 
+    
+
     const onMessageReceived = (payload)=>{
         var payloadData = JSON.parse(payload.body);
         switch(payloadData.status){
@@ -53,6 +55,8 @@ const ChatRoom = () => {
                 publicChats.push(payloadData);
                 setPublicChats([...publicChats]);
                 break;
+            default:
+                console.log("message receive error")
         }
     }
     

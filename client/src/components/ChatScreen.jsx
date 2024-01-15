@@ -79,24 +79,29 @@ export default function ChatScreen({handleMessage, sendValue, tab,setTab, sendPr
                     <div className="flex flex-col bg-[#353537] justify-end w-full overflow-y-auto">
                         <div>
                         {[...privateChats.get(tab)].map((chat,index)=>(
-                            <li className="flex text-lg mb-2 shadow-md h-auto w-auto p-2 bg-slate-800 text-white" key={index}>
-                                {chat.senderName !== userData.username && 
-                                <div className="mt-2 ml-2 mr-2">
-                                {chat.senderName}:
+                            <li className="flex justify-center text-lg mb-2 h-auto w-full p-2 text-white" key={index}>
+                                {chat.senderName !== userData.username &&
+                                    <div className="flex justify-start w-full">
+                                    <div className="flex flex-col bg-slate-800 min-w-[3vw] p-1 pr-2 rounded-xl">
+                                    <div className="text-sm ml-2 text-yellow-200">
+                                        {chat.senderName}
+                                    </div>
+                                    <div className="m-2">{chat.message}</div>
+                                    </div> 
                                 </div>}
                                 {chat.senderName === userData.username && 
-                                <div className="mt-2 ml-2 mr-2">
-                                {chat.senderName}:
-                                </div>}
-                                <div className="mt-2 ml-3">{chat.message}</div>
-
+                                <div className="flex justify-end w-full">
+                                    <div className="flex order-last bg-green-800 w-auto p-3 rounded-xl ">
+                                    <div className="">{chat.message}</div>
+                                </div>
+                                </div> }
                             </li>
                         ))}
                         </div>
 
                         <div className="flex mb-2 ml-2">
-                            <input className="min-h-[2.7rem] bg-[#2e2e2f] p-3 rounded-2xl border-gray-200 border-[0.5px] caret-white focus:outline-none focus:border-[1px] w-[73vw]" onChange={handleMessage} onKeyDown={handlePrivateEnter}></input>
-                            <button className="h-[3vw] w-[3vw] pb-1 flex justify-center items-center rounded-lg border-0 focus:outline-none ml-5 mr-5 bg-blue-200 font-bold text-xl hover:scale-110" onClick={sendPrivateValue}>
+                            <input className="min-h-[2.7rem] bg-[#2e2e2f] p-3 rounded-2xl border-gray-200 border-[0.5px] caret-white focus:outline-none focus:border-[1px] w-[73vw] text-white" value={userData.message} onChange={handleMessage} onKeyDown={handlePrivateEnter}></input>
+                            <button className="h-[3vw] w-[3vw] pb-1 flex justify-center items-center rounded-lg border-0 focus:outline-none ml-5 mr-5 bg-blue-200 text-black font-bold text-xl hover:scale-110" onClick={sendPrivateValue}>
                             ></button>
                         </div>
                     </div>
